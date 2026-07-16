@@ -1,0 +1,10 @@
+route:
+  receiver: restart-service
+
+receivers:
+
+- name: restart-service
+
+  webhook_configs:
+
+  - url: http://host.docker.internal:5001/
