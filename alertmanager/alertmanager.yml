@@ -1,0 +1,9 @@
+global:
+
+route:
+  receiver: self-healing-webhook
+
+receivers:
+  - name: self-healing-webhook
+    webhook_configs:
+      - url: http://host.docker.internal:5001/
