@@ -1,14 +1,12 @@
-from flask import Flask,request
+from flask import Flask, request
 import subprocess
 
-app=Flask(__name__)
+app = Flask(__name__)
 
-@app.route("/",methods=["POST"])
-
+@app.route("/", methods=["POST"])
 def alert():
-
-    subprocess.call("./alert.sh")
-
+    subprocess.call(["bash", "scripts/alert.sh"])
     return "Recovered"
 
-app.run(host="0.0.0.0",port=5001)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5001)
